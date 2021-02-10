@@ -1,30 +1,28 @@
 module.exports = {
-  pathPrefix: "/leonids",
+  pathPrefix: "",
   siteMetadata: {
-    title: `Leonids`,
+    title: `pot8os`,
     author: {
-      name: `@ry_zou`,
-      summary: `web dev`,
+      name: `pot8os`,
+      summary: `Mobile Developer`,
     },
-    description: `A simple, fixed sidebar two columns Gatsby.js blog starter.`,
-    siteUrl: `https://renyuanz.github.io/leonids`,
-    social: {
-      twitter: `ry_zou`,
-    },
+    description: `A simple blog.`,
+    siteUrl: `https://pot8os.github.io`,
     defaultImage: "images/bg.jpeg",
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
+        path: `${__dirname}/content/blog/`,
         name: `blog`,
+        ignore: [`**/_sample/**`, `**/_template/**`],
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/assets`,
+        path: `${__dirname}/content/assets/`,
         name: `assets`,
       },
     },

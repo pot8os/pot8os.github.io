@@ -22,7 +22,6 @@ type Data = {
         frontmatter: {
           title: string
           date: string
-          description: string
         }
         fields: {
           slug: string
@@ -65,13 +64,6 @@ const BlogIndex = ({
               </h3>
               <small>{node.frontmatter.date}</small>
             </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
           </article>
         )
       })}
@@ -127,9 +119,8 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY-MM-DD")
             title
-            description
           }
         }
       }
